@@ -234,17 +234,6 @@ a.custom-card:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 .portada{
   text-align: center;
   color: black;
@@ -257,4 +246,38 @@ a.custom-card:hover {
 .subtitulo{
   text-align: center;
 
+}
+
+.formulario{
+  text-align: center;
+}
+.mail{
+ border-radius: 5px;
+ border-style: solid;
+ border-color:darkgray;
+}
+.contr{
+  border-radius: 5px;
+ border-style: solid;
+ border-color:darkgray;
+}
+.iniciar{
+  padding: 15px 25px;
+  border: 1px;
+  background-color: rgba(34,159,188,255);
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+}
+.nombremail{
+  font-size: 18px;
+  margin: 5px 5px;
+}
+.nombrecont{
+  font-size: 18px;
+  margin: 1px 1px;
+}
+.iniciar:hover{
+  background-color: #79d8e9;
+  padding: 25px 35px;
 }
