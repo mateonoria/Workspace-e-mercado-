@@ -10,7 +10,7 @@ miLogin.addEventListener ("submit", function(evento) {
 
     if (mailCheck.length>0 && contCheck.length>0) {
         evento.preventDefault();
-        window.location.href = "index.html"
+        window.location.href = "home.html"
     } else if (!mailCheck.length>0 && !contCheck.length>0) {
         evento.preventDefault();
         alert ("Debe completar ambos campos")
