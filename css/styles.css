@@ -196,51 +196,11 @@ a.custom-card:hover {
   border-radius: 5px;
   padding: 5px;
 }
-.autoFoto{
-  padding: 10px;
-  height: 100%;
-  width: fit-content;
-  border: 1px solid gray;
-  
-}
-.fotoContainer {
-  height: 100%;
-}
-
-.autoTitulo{
-  display: inline-block;
-  position: relative;
-  top: -135px;
-  left: 240px;
-}
-
-.autoDescripcion{
-  display: inline-block;
-  position: relative;
-  top: -145px;
-  left: 240px;
-  font-size: 20px;
-}
-.venta{
-  display: inline-block;
-  position: relative;
-  top: -240px;
-  text-align: right;
-  right: 20px;
-  font-size: 17px;
-}
-.autoTitulo:hover{
-  color: red;
-}
-
 
 .portada{
   text-align: center;
   color: black;
   margin: 10px 0px;
-}
-.categoria{
-  color: crimson;
 }
 
 .subtitulo{
@@ -280,4 +240,15 @@ a.custom-card:hover {
 .iniciar:hover{
   background-color: #79d8e9;
   padding: 25px 35px;
+}
+
+#nombre{
+  font-size: 35px;
+}
+#cost{
+  font-size: 30px;
+
+}
+#vendidos{
+  text-align: right;
 }

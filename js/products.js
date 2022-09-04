@@ -1,55 +1,84 @@
-const autos = "https://japceibal.github.io/emercado-api/cats_products/101.json"
-fetch(autos)
+let ordenAsc = document.getElementById("sortAsc");
+let ordenDesc = document.getElementById("sortDesc");
+let ReputacionDesc = document.getElementById("sortByCount");
+let cambioCategoria = localStorage.getItem("catID")
+let categorias = `https://japceibal.github.io/emercado-api/cats_products/${cambioCategoria}.json`
+let listadeProductos = []
+
+
+fetch(categorias)
 .then (res => res.json())
 .then(datos=> {
-    console.log(datos)
-    console.log(datos.products[0])
-    console.log(datos.products[0].name)
+  listadeProductos = datos.products;
     
-   
-    /*let listaAutos = document.getElementById("productos");
-    let div = document.createElement("div");
-    div.className = "autos";
-    listaAutos.appendChild(div);*/
-
-    for (let auto of datos.products){
-        console.log(auto.name)
-        let listaDeAutos = document.getElementById("productos");
   
-        
+   
+    document.querySelector(".subtitulo").innerHTML = `Verás aquí todos los elementos de la categoría ${datos.catName}`
+
+    function filtrado() {
+    let productoFiltrado = datos.products.filter(products => (products.cost >= document.getElementById("rangeFilterCountMin").value )&& ( products.cost <= document.getElementById("rangeFilterCountMax").value));
+    console.log(productoFiltrado);
+    let contitem = document.getElementById('productos');
+    contitem.innerHTML = '';
+    for (let product of productoFiltrado) {
+        contitem.innerHTML += ` <br>
+     <div class="row" id="productos">
+      <div class="list-group col-3">
+             <img class="img-thumbnail" src= "`+ product.image +` ">
+               </div>
+          <div class="col">
+              <div id ="nombre"><p>${product.name}</p></div>
+
+            <div id="descripcion"><p>${product.description}</p></div>
+
+              <div id="id"><p>Vendidos:${product.soldCount}</p></div>
+                </div>
+                   <div class="col mb-1">
+                     <div id ="cost"><p>${product.currency}:<spam class="currency">${product.cost}</spam></p></div>
+                
+                </div>
+            </div>`;
+    };
+};
 
 
-        let nuevoAuto = `
-        
-
-        <div class= "autos col">
-         <div class = "col fotoContainer"> 
-        
-         <img class="autoFoto" src="${auto.image}"/>
-           <div/>
-
-         <div class = "row">  
-         <h3 class ="autoTitulo"> ${auto.name} - ${auto.currency} ${auto.cost}<h3/> 
-         
-         <p class = "autoDescripcion"> ${auto.description} <p/> 
-         <div/>
-
-         <div class="row">  <span class="venta"> ${auto.soldCount} Vendidos <span/> <div/>
-
-         <div/>
-
-        
-
-        `
-        listaDeAutos.innerHTML += nuevoAuto
+function limpiarfiltro(){
+    document.getElementById("rangeFilterCountMin").value = 0;
+    document.getElementById("rangeFilterCountMax").value = 3500001;
+    filtrado();
+};
+limpiarfiltro();
+document.getElementById("clearRangeFilter").addEventListener('click', () => { limpiarfiltro();}); 
+document.getElementById("rangeFilterCount").addEventListener('click', () => { filtrado()}); 
 
 
-        
-        
-      }
+sortDesc.addEventListener("click", event => {
+  listadeProductos.sort(function (a, b) {
+      if (a.cost < b.cost) return -1;
+      if (a.cost > b.cost) return 1;
+      return 0;
+  });
+  inner();
+});
 
-    
-        
+sortAsc.addEventListener("click", event => {
+  listadeProductos.sort(function (a, b) {
+      if (a.cost > b.cost) return -1;
+      if (a.cost < b.cost) return 1;
+      return 0;
+  });
+  inner();
+});
 
-    
-})
+sortByCount.addEventListener("click", event => {
+  listadeProductos.sort(function (a, b) {
+      if (a.soldCount < b.soldCount) return -1;
+      if (a.soldCount > b.soldCount) return 1;
+      return 0;
+  });
+  inner();
+});
+
+});
+  
+ 
