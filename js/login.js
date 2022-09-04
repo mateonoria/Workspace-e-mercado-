@@ -1,26 +1,31 @@
 let miLogin = document.getElementById("loginJAP")
 
+
+
+const correo = document.getElementById("barraMail")
+
+
+
 miLogin.addEventListener ("submit", function(evento) {
-    let miMail = document.getElementById("barraMail")
-    let miCont = document.getElementById("barraCont")
-  
-    let mailCheck = miMail.value
-    let contCheck = miCont.value
-    console.log(contCheck)
+evento.preventDefault();
+
+let miMail = document.getElementById("barraMail")
+let miCont = document.getElementById("barraCont")
+
+let mailCheck = miMail.value
+let contCheck = miCont.value
+console.log(contCheck)
 
     if (mailCheck.length>0 && contCheck.length>0) {
-        evento.preventDefault();
+        localStorage.setItem("email", correo.value)
         window.location.href = "home.html"
     } else if (!mailCheck.length>0 && !contCheck.length>0) {
-        evento.preventDefault();
         alert ("Debe completar ambos campos")
     } else if (!mailCheck.length>0) {
-        evento.preventDefault();
         alert("Debe introducir un mail")
        
 
     } else if (!contCheck>0){
-        evento.preventDefault();
         alert("Debe introducir su contraseña")
 
     }
