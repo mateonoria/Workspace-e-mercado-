@@ -252,3 +252,65 @@ a.custom-card:hover {
 #vendidos{
   text-align: right;
 }
+.infoProd{
+  margin: 50px 40px;
+  font-size: 20px;
+
+}
+
+.foto-small-img img{
+  height: 80px;
+  margin: 10px 40px;
+  cursor: pointer;
+  display: block;
+  opacity: 0.6;
+}
+.foto-small-img img:hover{
+  opacity: 1;
+}
+.foto-small-img{
+  float:left;
+  
+}
+.fotoContainer{
+  position: absolute;
+}
+.imgContainer img{
+  height: 400px;
+  
+}
+.imgContainer{
+  float:right;
+  padding: 1px;
+}
+.comments1{
+  height: 200px;
+  width: 60%;  
+  margin: 10px 40px;
+  margin-top: 370px;
+
+
+}
+.comment{
+  font-size: 20px;
+  border: 3px;
+  border-color: grey;
+  border-style: solid;
+  margin: 10px 10px;
+  padding-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.text-muted2{
+margin-top: 800px;
+}
+
+.titulocomment{
+  font-size: 35px;
+}
+.tuComentario{
+    margin: 10px 40px;
+    margin-top: 270px;
+    font-size: 20px;
+
+}
