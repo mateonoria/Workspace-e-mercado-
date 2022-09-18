@@ -5,6 +5,11 @@ let cambioCategoria = localStorage.getItem("catID")
 let categorias = `https://japceibal.github.io/emercado-api/cats_products/${cambioCategoria}.json`
 let listadeProductos = []
 
+function setProID(id) {
+  localStorage.setItem("productsID", id);
+  window.location = "product-info.html"
+}
+
 
 fetch(categorias)
 .then (res => res.json())
@@ -22,7 +27,7 @@ fetch(categorias)
     contitem.innerHTML = '';
     for (let product of productoFiltrado) {
         contitem.innerHTML += ` <br>
-     <div class="row" id="productos">
+     <div class="row" id="productos" onclick="setProID(${product.id})" class="list-group-item list-group-item-action cursor-active "> 
       <div class="list-group col-3">
              <img class="img-thumbnail" src= "`+ product.image +` ">
                </div>
