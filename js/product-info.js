@@ -1,10 +1,15 @@
 let prueba = document.getElementById("products")
 let id = localStorage.getItem("productsID")
 let comentBox = document.getElementById("comments2")
+let productosRelacionados = document.getElementById("prodR")
 
 let productUrl = `https://japceibal.github.io/emercado-api/products/${id}.json`
 let commentsUrl = `https://japceibal.github.io/emercado-api/products_comments/${id}.json`
 
+function setProID(id) {
+   localStorage.setItem("productsID", id);
+   window.location = "product-info.html"
+ }
 
 
 
@@ -47,7 +52,18 @@ fetch(productUrl)
                             </script>
                         
                             </div>
-                           `                                                                               
+                           `      
+                           let relacionado = ""
+                           for(let related of infoPro.relatedProducts){
+                           relacionado +=`<div class="relacionados-div" onclick="setProID(${related.id})">
+                            <img class="relacionados-img" src="${related.image}">
+                            <p><b>${related.name}</b></p>
+                           </div>`
+                           }
+                           productosRelacionados.innerHTML+=relacionado
+
+                           
+
 }) 
 
 fetch(commentsUrl)
