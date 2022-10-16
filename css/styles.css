@@ -336,3 +336,18 @@ margin-top:0px;
 .relacionados-img{
   width: 100%;
 }
+.pict{
+  width: 10vw;
+}
+.artInformation{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+}
+.env{
+  margin: 0;
+}
+.env2{
+  margin-top: 15%;
+}
