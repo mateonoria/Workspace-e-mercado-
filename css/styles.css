@@ -351,3 +351,32 @@ margin-top:0px;
 .env2{
   margin-top: 15%;
 }
+.subtotal2{
+  display: flex;
+
+}
+.costo2{
+  margin-left: auto;
+}
+.table-red{
+  display: none;
+  color: red;
+}
+#finish-purchase{
+  display: none;
+}
+.acomodar{
+  margin-left: 3%;
+  margin-top: 0%;
+}
+.finish-b{
+  margin-left: 35%;
+  margin-top: 6%;
+  font-size: 25px;
+  border-radius: 9px;
+  width: 30%;
+  height: 20%;
+}
+.acomodar2{
+  margin-top: 5%;
+}
